@@ -28,6 +28,24 @@ def print_top(fname):
     '''
     # !!!Your code here!!!
 
+    file = open(fname)
+    wordcount = {}
+    wordlist = []
+
+    for word in file.read().split():
+	word = word.lower()
+        word = word.strip().strip("'").strip('"').strip('.').strip(',').strip('!').strip(';').strip('?').strip('!').strip('-').strip('>').strip(';').strip(':').strip('(').strip(')').strip('--')
+        if word not in wordcount:
+            wordcount[word] = 1
+	else:
+	    wordcount[word] += 1
+    wordsort = sorted(wordcount.items(),key = lambda x :x[1]) 
+    i = 1
+    while (i <= 20):  
+        print wordsort[-i]
+        i =i + 1
+
+
 
 def main():
     if len(sys.argv) != 3:
