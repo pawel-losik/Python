@@ -21,6 +21,8 @@ def last(a):
     '''
     # !!!Your code here!!!
 
+    thelast = a[-1]
+    return thelast
 
 def sort_key(tuples):
     '''
@@ -32,7 +34,10 @@ def sort_key(tuples):
     '''
     # !!!Your code here!!!
     
-
+    for item in tuples:     
+        return sorted(tuples, key=last)
+	 
+ 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(got, expected):
