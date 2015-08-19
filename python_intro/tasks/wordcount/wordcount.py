@@ -6,7 +6,21 @@ def print_count(fname):
     Prints one per line '<word> <count>' sorted by word for the given file
     '''
     # !!!Your code here!!!
+    file = open(fname)
+    wordcount = {}
+ 
+    for word in file.read().split():
+        word = word.lower()
+        word = word.strip().strip("'").strip('"').strip('.').strip(',').strip('!').strip(';').strip('?').strip('!').strip('-').strip('>').strip(';').strip(':').strip('(').strip(')').strip('--')
+        if word not in wordcount:
+            wordcount[word] = 1
+	else:
+	    wordcount[word] += 1
+    for k,v in wordcount.items():
+	#print (word,wordcount)
+	print k, v
 
+    
 
 def print_top(fname):
     '''
