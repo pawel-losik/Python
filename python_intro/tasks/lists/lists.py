@@ -1,3 +1,4 @@
+#!/usr/bin/python
 
 def first_last(words):
     '''
@@ -6,7 +7,13 @@ def first_last(words):
     and last chars of the string are the same.
     '''
     # !!!Your code here!!!
+    
+    counter = 0
+    for word in words:
+       if len(word)>=2 and word[0] == word[-1]: 
+          counter += 1
 
+    return counter
 
 def last(a):
     '''
@@ -24,7 +31,7 @@ def sort_key(tuples):
     Hint: use a custom key= function to extract the last element form each tuple.
     '''
     # !!!Your code here!!!
-
+    
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
